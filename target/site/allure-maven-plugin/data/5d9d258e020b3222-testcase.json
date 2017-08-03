@@ -1,0 +1,79 @@
+{
+  "uid" : "5d9d258e020b3222",
+  "name" : "testInputFieldForDifferentValues(0003\\,54aoi\\,,  0 003\\,54) [9]",
+  "title" : "Test input field for different values(0003\\,54aoi\\,,  0 003\\,54)  [9]",
+  "time" : {
+    "start" : 1501776697783,
+    "stop" : 1501776698398,
+    "duration" : 615
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "steps" : [ {
+    "name" : "clearInputField",
+    "title" : "Clear input field",
+    "time" : {
+      "start" : 1501776697789,
+      "stop" : 1501776697891,
+      "duration" : 102
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "sendKeysToInputField[0003,54aoi,]",
+    "title" : "Input 0003,54aoi, into input field",
+    "time" : {
+      "start" : 1501776697891,
+      "stop" : 1501776698316,
+      "duration" : 425
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "getInputFieldValue",
+    "title" : "See the value in the input field",
+    "time" : {
+      "start" : 1501776698316,
+      "stop" : 1501776698397,
+      "duration" : 81
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "JUnit"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}

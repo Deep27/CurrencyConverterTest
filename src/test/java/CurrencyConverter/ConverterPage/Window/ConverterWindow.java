@@ -19,7 +19,7 @@ public class ConverterWindow extends PageObject
         super(driver);
     }
 
-    @Step("Input '{0}' into input field")
+    @Step("Input {0} into input field")
     public void sendKeysToInputField(String value) {
         getVisibleElement(inputFieldLocator).sendKeys(value);
         try {

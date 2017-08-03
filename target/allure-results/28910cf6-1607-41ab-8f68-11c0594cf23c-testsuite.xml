@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1501776689712" stop="1501776701440" version="1.4.0">
+    <name>CurrencyConverter.CurrencyConverterTest</name>
+    <title>Sberbank's currency converter widget test</title>
+    <description type="text">Test the correctness of currency convertion, input field accepting correct values.</description>
+    <test-cases>
+        <test-case start="1501776689733" stop="1501776693508" status="passed">
+            <name>testInputFieldForDifferentValues(1,  1) [0]</name>
+            <steps>
+                <step start="1501776690419" stop="1501776692431" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776692432" stop="1501776693416" status="passed">
+                    <name>sendKeysToInputField[1]</name>
+                    <title>Input 1 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776693416" stop="1501776693504" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776693678" stop="1501776694271" status="passed">
+            <name>testInputFieldForDifferentValues(-1, 1) [1]</name>
+            <steps>
+                <step start="1501776693689" stop="1501776693870" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776693871" stop="1501776694194" status="passed">
+                    <name>sendKeysToInputField[-1]</name>
+                    <title>Input -1 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776694194" stop="1501776694270" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776694275" stop="1501776694788" status="passed">
+            <name>testInputFieldForDifferentValues(1.0,    1.0) [2]</name>
+            <steps>
+                <step start="1501776694285" stop="1501776694420" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776694420" stop="1501776694689" status="passed">
+                    <name>sendKeysToInputField[1.0]</name>
+                    <title>Input 1.0 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776694689" stop="1501776694788" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776694791" stop="1501776695238" status="passed">
+            <name>testInputFieldForDifferentValues(1\,0,   1\,0) [3]</name>
+            <steps>
+                <step start="1501776694798" stop="1501776694898" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776694898" stop="1501776695158" status="passed">
+                    <name>sendKeysToInputField[1,0]</name>
+                    <title>Input 1,0 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776695158" stop="1501776695237" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776695240" stop="1501776695670" status="passed">
+            <name>testInputFieldForDifferentValues(1.00,   1.00) [4]</name>
+            <steps>
+                <step start="1501776695247" stop="1501776695337" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776695337" stop="1501776695600" status="passed">
+                    <name>sendKeysToInputField[1.00]</name>
+                    <title>Input 1.00 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776695600" stop="1501776695670" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776695672" stop="1501776696135" status="passed">
+            <name>testInputFieldForDifferentValues(1\,00,  1\,00) [5]</name>
+            <steps>
+                <step start="1501776695680" stop="1501776695796" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776695796" stop="1501776696064" status="passed">
+                    <name>sendKeysToInputField[1,00]</name>
+                    <title>Input 1,00 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776696064" stop="1501776696135" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776696137" stop="1501776696662" status="passed">
+            <name>testInputFieldForDifferentValues(-234.234,   234.23) [6]</name>
+            <steps>
+                <step start="1501776696143" stop="1501776696229" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776696229" stop="1501776696589" status="passed">
+                    <name>sendKeysToInputField[-234.234]</name>
+                    <title>Input -234.234 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776696589" stop="1501776696662" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776696664" stop="1501776697203" status="passed">
+            <name>testInputFieldForDifferentValues(a243.i456,  243.45) [7]</name>
+            <steps>
+                <step start="1501776696670" stop="1501776696773" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776696773" stop="1501776697129" status="passed">
+                    <name>sendKeysToInputField[a243.i456]</name>
+                    <title>Input a243.i456 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776697129" stop="1501776697203" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776697205" stop="1501776697780" status="passed">
+            <name>testInputFieldForDifferentValues(999999999999,   999 999 999 999) [8]</name>
+            <steps>
+                <step start="1501776697212" stop="1501776697311" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776697311" stop="1501776697706" status="passed">
+                    <name>sendKeysToInputField[999999999999]</name>
+                    <title>Input 999999999999 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776697706" stop="1501776697780" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776697783" stop="1501776698398" status="passed">
+            <name>testInputFieldForDifferentValues(0003\,54aoi\,,  0 003\,54) [9]</name>
+            <steps>
+                <step start="1501776697789" stop="1501776697891" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776697891" stop="1501776698316" status="passed">
+                    <name>sendKeysToInputField[0003,54aoi,]</name>
+                    <title>Input 0003,54aoi, into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776698316" stop="1501776698397" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776698399" stop="1501776699077" status="passed">
+            <name>testInputFieldForDifferentValues(0\,aoe2534aoip2.2,  0\,25) [10]</name>
+            <steps>
+                <step start="1501776698424" stop="1501776698566" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776698566" stop="1501776699001" status="passed">
+                    <name>sendKeysToInputField[0,aoe2534aoip2.2]</name>
+                    <title>Input 0,aoe2534aoip2.2 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776699001" stop="1501776699076" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776699078" stop="1501776699797" status="passed">
+            <name>testInputFieldForDifferentValues(999999999999.999999999, 999 999 999 999.99) [11]</name>
+            <steps>
+                <step start="1501776699084" stop="1501776699174" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776699175" stop="1501776699713" status="passed">
+                    <name>sendKeysToInputField[999999999999.999999999]</name>
+                    <title>Input 999999999999.999999999 into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776699713" stop="1501776699796" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1501776699798" stop="1501776700950" status="passed">
+            <name>testInputFieldForDifferentValues(u4398uh342\,\,\,2342\,234ia.\,234iu,    4 398 342\,23) [12]</name>
+            <steps>
+                <step start="1501776699803" stop="1501776699896" status="passed">
+                    <name>clearInputField</name>
+                    <title>Clear input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776699896" stop="1501776700845" status="passed">
+                    <name>sendKeysToInputField[u4398uh342,,,2342,234ia.,234iu]</name>
+                    <title>Input u4398uh342,,,2342,234ia.,234iu into input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1501776700845" stop="1501776700950" status="passed">
+                    <name>getInputFieldValue</name>
+                    <title>See the value in the input field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels/>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JUnit"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

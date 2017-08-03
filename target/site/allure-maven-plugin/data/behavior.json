@@ -1,0 +1,169 @@
+{
+  "features" : [ {
+    "title" : "Without feature",
+    "statistic" : {
+      "total" : 13,
+      "passed" : 13,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "stories" : [ {
+      "uid" : "5f3b024b0da60efe9ecb322fd34a2604",
+      "title" : "Without story",
+      "statistic" : {
+        "total" : 13,
+        "passed" : 13,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 0,
+        "broken" : 0
+      },
+      "testCases" : [ {
+        "uid" : "fe9262bfc2a2e581",
+        "name" : "testInputFieldForDifferentValues(1,  1) [0]",
+        "title" : "Test input field for different values(1,  1)  [0]",
+        "time" : {
+          "start" : 1501776689733,
+          "stop" : 1501776693508,
+          "duration" : 3775
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "f1088808ac2f556f",
+        "name" : "testInputFieldForDifferentValues(-1, 1) [1]",
+        "title" : "Test input field for different values(-1, 1)  [1]",
+        "time" : {
+          "start" : 1501776693678,
+          "stop" : 1501776694271,
+          "duration" : 593
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "374541bdd284a2b7",
+        "name" : "testInputFieldForDifferentValues(1.0,    1.0) [2]",
+        "title" : "0)  [2]",
+        "time" : {
+          "start" : 1501776694275,
+          "stop" : 1501776694788,
+          "duration" : 513
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "dfed495a28283243",
+        "name" : "testInputFieldForDifferentValues(1\\,0,   1\\,0) [3]",
+        "title" : "Test input field for different values(1\\,0,   1\\,0)  [3]",
+        "time" : {
+          "start" : 1501776694791,
+          "stop" : 1501776695238,
+          "duration" : 447
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "a97de7e5e7f7d081",
+        "name" : "testInputFieldForDifferentValues(1.00,   1.00) [4]",
+        "title" : "00)  [4]",
+        "time" : {
+          "start" : 1501776695240,
+          "stop" : 1501776695670,
+          "duration" : 430
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "bf3624fbd08b11ad",
+        "name" : "testInputFieldForDifferentValues(1\\,00,  1\\,00) [5]",
+        "title" : "Test input field for different values(1\\,00,  1\\,00)  [5]",
+        "time" : {
+          "start" : 1501776695672,
+          "stop" : 1501776696135,
+          "duration" : 463
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "31c9a458f60264ae",
+        "name" : "testInputFieldForDifferentValues(-234.234,   234.23) [6]",
+        "title" : "23)  [6]",
+        "time" : {
+          "start" : 1501776696137,
+          "stop" : 1501776696662,
+          "duration" : 525
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "8d74a83ecb9566d8",
+        "name" : "testInputFieldForDifferentValues(a243.i456,  243.45) [7]",
+        "title" : "45)  [7]",
+        "time" : {
+          "start" : 1501776696664,
+          "stop" : 1501776697203,
+          "duration" : 539
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "6819d36692d40274",
+        "name" : "testInputFieldForDifferentValues(999999999999,   999 999 999 999) [8]",
+        "title" : "Test input field for different values(999999999999,   999 999 999 999)  [8]",
+        "time" : {
+          "start" : 1501776697205,
+          "stop" : 1501776697780,
+          "duration" : 575
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "5d9d258e020b3222",
+        "name" : "testInputFieldForDifferentValues(0003\\,54aoi\\,,  0 003\\,54) [9]",
+        "title" : "Test input field for different values(0003\\,54aoi\\,,  0 003\\,54)  [9]",
+        "time" : {
+          "start" : 1501776697783,
+          "stop" : 1501776698398,
+          "duration" : 615
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "5291093144e3074c",
+        "name" : "testInputFieldForDifferentValues(0\\,aoe2534aoip2.2,  0\\,25) [10]",
+        "title" : "2,  0\\,25)  [10]",
+        "time" : {
+          "start" : 1501776698399,
+          "stop" : 1501776699077,
+          "duration" : 678
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "9c2ca86e35340e40",
+        "name" : "testInputFieldForDifferentValues(999999999999.999999999, 999 999 999 999.99) [11]",
+        "title" : "99)  [11]",
+        "time" : {
+          "start" : 1501776699078,
+          "stop" : 1501776699797,
+          "duration" : 719
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "d15b59360a0d2f13",
+        "name" : "testInputFieldForDifferentValues(u4398uh342\\,\\,\\,2342\\,234ia.\\,234iu,    4 398 342\\,23) [12]",
+        "title" : "\\,234iu,    4 398 342\\,23)  [12]",
+        "time" : {
+          "start" : 1501776699798,
+          "stop" : 1501776700950,
+          "duration" : 1152
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}
