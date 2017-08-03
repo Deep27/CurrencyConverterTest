@@ -3,7 +3,6 @@ package CurrencyConverter.ConverterPage.Window;
 import CurrencyConverter.ConverterPage.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by RomanSo on 03.08.17.
@@ -11,16 +10,30 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ConverterWindow extends PageObject
 {
-    By convertButtonLocator = By.className("rates-button");
+    private By btnConvertLocator = By.className("rates-button");
+    private By inputValue = By.xpath("//input[@placeholder='Сумма']");
 
-    public ConverterWindow(WebDriver driver)
-    {
+    public ConverterWindow(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(this.driver, this);
     }
 
-    public RatesConverterResultWindow convert()
+    public void sendInputValue(String value) {
+        driver.findElement(inputValue).sendKeys(value);
+//        getVisibleElement(inputValue).sendKeys(value);
+    }
+
+    public ConvertionResultWindow convert()
     {
-        return null;
+//        getVisibleElement(btnConvertLocator).click();
+        driver.findElement(btnConvertLocator).click();
+        return new ConvertionResultWindow(driver);
+    }
+
+    public void clearInputValue() {
+        getVisibleElement(inputValue).clear();
     }
 }
+
+
+
+
