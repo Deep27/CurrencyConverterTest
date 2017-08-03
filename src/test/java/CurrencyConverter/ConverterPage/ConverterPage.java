@@ -24,10 +24,6 @@ public class ConverterPage extends PageObject
         quotesWindow = new QuotesWindow(this.driver);
     }
 
-    public ConvertionResultWindow convert() {
-        return converterWindow.convert();
-    }
-
     public ConverterWindow converterWindow() {
         return converterWindow;
     }

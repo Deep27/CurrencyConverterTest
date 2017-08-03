@@ -22,23 +22,28 @@ public class ConverterWindow extends PageObject
     @Step("Input {0} into input field")
     public void sendKeysToInputField(String value) {
         getVisibleElement(inputFieldLocator).sendKeys(value);
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
-    @Step("Clear input field")
-    public void clearInputField() {
+    @Step("Clear input field by selecting and removing text with backspace")
+    public void clearInputFieldWithBackspace() {
         getVisibleElement(inputFieldLocator).sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
-//        getVisibleElement(inputFieldLocator).clear();
+    }
+
+    public void clearInputField() {
+        getVisibleElement(inputFieldLocator).clear();
     }
 
     @Step("Click 'Convert' button")
-    public ConvertionResultWindow convert()
+    public ConvertionResultWindow convertByButtonClick()
     {
         getVisibleElement(btnConvertLocator).click();
+        return new ConvertionResultWindow(driver);
+    }
+
+    @Step("Press 'Enter' button")
+    public ConvertionResultWindow convertByPressingEnterKey()
+    {
+        getVisibleElement(inputFieldLocator).sendKeys(Keys.ENTER);
         return new ConvertionResultWindow(driver);
     }
 

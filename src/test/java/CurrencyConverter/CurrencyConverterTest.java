@@ -62,9 +62,11 @@ public class CurrencyConverterTest
     @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/input_values.csv")
     public void testInputFieldForDifferentValues(String input, String correctInput)
     {
-        converterPage.converterWindow().clearInputField();
+        converterPage.converterWindow().clearInputFieldWithBackspace();
         converterPage.converterWindow().sendKeysToInputField(input);
         String resultInputFieldValue = converterPage.converterWindow().getInputFieldValue();
         assertEquals(correctInput, resultInputFieldValue);
     }
+
+
 }
