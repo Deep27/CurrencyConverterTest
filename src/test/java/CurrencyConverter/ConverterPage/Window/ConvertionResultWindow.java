@@ -17,15 +17,15 @@ public class ConvertionResultWindow extends PageObject
         super(driver);
     }
 
-    public String getFrom() {
-        return getFirstNumber(getVisibleElement(resultFromLocator).getText());
+    public String getFromValue() {
+        return getNumber(getVisibleElement(resultFromLocator).getText());
     }
 
-    public String getTo() {
-        return getFirstNumber(getVisibleElement(resultToLocator).getText());
+    public String getToValue() {
+        return getNumber(getVisibleElement(resultToLocator).getText());
     }
 
-    private String getFirstNumber(String text) {
+    private String getNumber(String text) {
         int commaIndex = text.indexOf(',');
         return text.substring(0, commaIndex + 3);
     }

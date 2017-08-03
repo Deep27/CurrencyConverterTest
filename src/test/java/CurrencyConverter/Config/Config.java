@@ -6,6 +6,7 @@ package CurrencyConverter.Config;
 
 public class Config
 {
-    public static final String PATH_GECKODRIVER = "src/test/resources/geckodriver";
     public static final String PAGE_URL = "http://www.sberbank.ru/ru/quotes/converter";
+    public static final String PATH_GECKODRIVER = "src/test/resources/geckodriver";
+    public static final String PATH_PARAMETER_RESOURCES = "src/test/resources/csv/";
 }
