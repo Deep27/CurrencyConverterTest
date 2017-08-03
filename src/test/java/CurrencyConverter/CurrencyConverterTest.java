@@ -68,5 +68,12 @@ public class CurrencyConverterTest
         assertEquals(correctInput, resultInputFieldValue);
     }
 
-
+    @Test
+    public void DEBUGPrintRatesAndCurrenciesDEBUG()
+    {
+        System.out.println(converterPage.quotesWindow().getCurrencyFrom());
+        System.out.println(converterPage.quotesWindow().getCurrencyTo());
+        System.out.println(converterPage.quotesWindow().getBuyRate());
+        System.out.println(converterPage.quotesWindow().getSellRate());
+    }
 }
