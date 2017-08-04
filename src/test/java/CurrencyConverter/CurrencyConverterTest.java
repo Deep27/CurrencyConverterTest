@@ -177,6 +177,32 @@ public class CurrencyConverterTest
         assertNotEquals(firstResult, secondResult);
     }
 
+    @Test
+    @Title("Correct buy rate")
+    @Description("Buy rate span should be updated after" +
+            " user has selected some currency from any of dropdowns")
+    @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/currency_list.csv")
+    public void testBuyRateChangesAfterCurrencyChanged(String currency)
+    {
+        String buyRateBefore = new QuotesWindow(driver).getFromBuyRate();
+        String buyRateAfter = converterPage.converterWindow().selectCurrencyFrom(currency).getFromBuyRate();
+
+        assertNotEquals(buyRateBefore, buyRateAfter);
+    }
+
+    @Test
+    @Title("Correct sell rate")
+    @Description("Sell rate span should be updated after" +
+            " user has selected some currency from any of dropdowns")
+    @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/currency_list.csv")
+    public void testSellRateChangesAfterCurrencyChanged(String currency)
+    {
+        String sellRateBefore = new QuotesWindow(driver).getFromSellRate();
+        String sellRateAfter = converterPage.converterWindow().selectCurrencyFrom(currency).getFromSellRate();
+
+        assertNotEquals(sellRateBefore, sellRateAfter);
+    }
+
     private double getResultAfterConvertion(String valueToConvert)
     {
         converterPage.converterWindow().sendKeysToInputField(valueToConvert);

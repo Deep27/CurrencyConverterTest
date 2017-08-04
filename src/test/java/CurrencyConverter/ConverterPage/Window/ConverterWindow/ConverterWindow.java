@@ -78,6 +78,14 @@ public class ConverterWindow extends PageObject
         return new QuotesWindow(driver);
     }
 
+    public String getCurrencyFrom() {
+        return selects.get(0).getText();
+    }
+
+    public String getCurrencyTo() {
+        return selects.get(1).getText();
+    }
+
     private void clickCurrencyOption(WebElement currenciesSelect, String currency)
     {
         currenciesSelect.click();
