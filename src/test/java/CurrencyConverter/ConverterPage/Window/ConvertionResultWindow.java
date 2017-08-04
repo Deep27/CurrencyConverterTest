@@ -39,7 +39,8 @@ public class ConvertionResultWindow extends PageObject
     }
 
     private String getNumber(String text) {
-        int commaIndex = text.indexOf(',');
-        return text.substring(0, commaIndex + 3);
+        String withoutSpaces = text.replace(" ","");
+        int commaIndex = withoutSpaces.indexOf(',');
+        return withoutSpaces.substring(0, commaIndex + 3);
     }
 }

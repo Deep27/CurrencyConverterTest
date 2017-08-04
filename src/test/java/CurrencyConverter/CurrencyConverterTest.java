@@ -2,6 +2,9 @@ package CurrencyConverter;
 
 import CurrencyConverter.Config.Config;
 import CurrencyConverter.ConverterPage.ConverterPage;
+import CurrencyConverter.ConverterPage.Window.ConverterWindow.Currency;
+import CurrencyConverter.ConverterPage.Window.ConvertionResultWindow;
+import CurrencyConverter.ConverterPage.Window.QuotesWindow;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import org.junit.*;
@@ -69,12 +72,48 @@ public class CurrencyConverterTest
     }
 
     @Test
+    @Title("Convertion correctness")
+    @Description("Convertion of some amount of money from one currency to another should be correct")
+    @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/currency_combinations.csv")
+    public void convertionIsCorrect(String from, String to, String value)
+    {
+        double buyRate = 1.0;
+        double sellRate = 1.0;
+
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        converterPage.converterWindow().sendKeysToInputField(value);
+        converterPage.converterWindow().selectCurrencyFrom(from);
+        QuotesWindow quotesWindow = converterPage.converterWindow().selectCurrencyTo(to);
+        ConvertionResultWindow convertionResultWindow = converterPage.converterWindow().convertByButtonClick();
+
+        double fromCoefficient = LocalConverter.getDouble(quotesWindow.getFromCoefficient());
+        double toCoefficient = LocalConverter.getDouble(quotesWindow.getToCoefficient());
+
+        if (from.equals(Currency.RUB))
+            sellRate = LocalConverter.getDouble(quotesWindow.getFromSellRate());
+
+        else if (to.equals(Currency.RUB))
+            buyRate = LocalConverter.getDouble(quotesWindow.getFromBuyRate());
+
+        else {
+            buyRate = LocalConverter.getDouble(quotesWindow.getFromBuyRate());
+            sellRate = LocalConverter.getDouble(quotesWindow.getToSellRate());
+        }
+
+        assertEquals(
+                LocalConverter.convert(Double.valueOf(value), buyRate, sellRate, fromCoefficient, toCoefficient),
+                LocalConverter.getDouble(convertionResultWindow.getToValue()),
+                0.0
+        );
+    }
+
+    @Test
     public void DEBUGPrintRatesAndCurrenciesDEBUG()
     {
-        System.out.println(converterPage.quotesWindow().getCurrencyFrom());
-        System.out.println(converterPage.quotesWindow().getCurrencyTo());
-        System.out.println(converterPage.quotesWindow().getBuyRate());
-        System.out.println(converterPage.quotesWindow().getSellRate());
+        converterPage.converterWindow().selectCurrencyFrom(Currency.RUB);
+        QuotesWindow quotesWindow = converterPage.converterWindow().selectCurrencyTo(Currency.CHF);
+        System.out.println(quotesWindow.getFromBuyRate());
+        System.out.println(quotesWindow.getFromSellRate());
     }
 
     @Test

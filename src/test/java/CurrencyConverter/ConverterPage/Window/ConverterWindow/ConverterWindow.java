@@ -2,12 +2,13 @@ package CurrencyConverter.ConverterPage.Window.ConverterWindow;
 
 import CurrencyConverter.ConverterPage.PageObject;
 import CurrencyConverter.ConverterPage.Window.ConvertionResultWindow;
-import org.openqa.selenium.By;
+import CurrencyConverter.ConverterPage.Window.QuotesWindow;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
@@ -26,8 +27,6 @@ public class ConverterWindow extends PageObject
 
     @FindBy(className = "select")
     private List<WebElement> selects;
-
-    private By dropdownOptionLocator = By.tagName("span");
 
     public ConverterWindow(WebDriver driver) {
         super(driver);
@@ -68,13 +67,15 @@ public class ConverterWindow extends PageObject
     }
 
     @Step("Select currency from: {0}")
-    public void selectCurrencyFrom(String currency) {
+    public QuotesWindow selectCurrencyFrom(String currency) {
         clickCurrencyOption(selects.get(0), currency);
+        return new QuotesWindow(driver);
     }
 
     @Step("Select currency to: {0}")
-    public void selectCurrencyTo(String currency) {
+    public QuotesWindow selectCurrencyTo(String currency) {
         clickCurrencyOption(selects.get(1), currency);
+        return new QuotesWindow(driver);
     }
 
     private void clickCurrencyOption(WebElement currenciesSelect, String currency)
