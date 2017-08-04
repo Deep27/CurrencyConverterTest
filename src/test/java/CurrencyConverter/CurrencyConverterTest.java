@@ -75,13 +75,14 @@ public class CurrencyConverterTest
     @Title("Convertion correctness")
     @Description("Convertion of some amount of money from one currency to another should be correct")
     @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/currency_combinations.csv")
-    public void convertionIsCorrect(String from, String to, String value)
+    public void convertionIsCorrect(String from, String to)
     {
+        double valueToConvert = 100.0;
         double buyRate = 1.0;
         double sellRate = 1.0;
 
         converterPage.converterWindow().clearInputFieldWithBackspace();
-        converterPage.converterWindow().sendKeysToInputField(value);
+        converterPage.converterWindow().sendKeysToInputField(String.valueOf(valueToConvert));
         converterPage.converterWindow().selectCurrencyFrom(from);
         QuotesWindow quotesWindow = converterPage.converterWindow().selectCurrencyTo(to);
         ConvertionResultWindow convertionResultWindow = converterPage.converterWindow().convertByButtonClick();
@@ -101,26 +102,72 @@ public class CurrencyConverterTest
         }
 
         assertEquals(
-                LocalConverter.convert(Double.valueOf(value), buyRate, sellRate, fromCoefficient, toCoefficient),
+                LocalConverter.convert(
+                        Double.valueOf(valueToConvert), buyRate, sellRate, fromCoefficient, toCoefficient),
                 LocalConverter.getDouble(convertionResultWindow.getToValue()),
                 0.0
         );
     }
 
     @Test
-    public void DEBUGPrintRatesAndCurrenciesDEBUG()
+    @Title("Minimum value for convertion")
+    @Description("The minimum value that can be converted should be one")
+    public void testMinimumValueThatCanBeConvertedIsOne()
     {
-        converterPage.converterWindow().selectCurrencyFrom(Currency.RUB);
-        QuotesWindow quotesWindow = converterPage.converterWindow().selectCurrencyTo(Currency.CHF);
-        System.out.println(quotesWindow.getFromBuyRate());
-        System.out.println(quotesWindow.getFromSellRate());
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        converterPage.converterWindow().sendKeysToInputField("500,0");
+
+        double firstResult
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        converterPage.converterWindow().sendKeysToInputField("0,99");
+        double secondResult
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        converterPage.converterWindow().sendKeysToInputField("1,0");
+        double thirdResult
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+
+        assertEquals(firstResult, secondResult, 0.0);
+        assertNotEquals(secondResult, thirdResult);
     }
 
     @Test
-    @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/currency_combinations.csv")
-    public void DEBUGSelectCurrencies(String currencyFrom, String currencyTo, String value)
+    @Title("Empty input")
+    @Description("Convertion should not be executed if the input field is empty")
+    public void testEmptyInputValueDoesntConvertAnything()
     {
-        converterPage.converterWindow().selectCurrencyFrom(currencyFrom);
-        converterPage.converterWindow().selectCurrencyTo(currencyTo);
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        converterPage.converterWindow().sendKeysToInputField("1000.00");
+        double firstResult
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        double secondResult
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+
+        assertEquals(firstResult, secondResult, 0.0);
+    }
+
+    @Test
+    @Title("The ways of executing convertion")
+    @Description("Convertion result should be the same after clicking" +
+            " \"Convert\" button and pressing \"Enter\" key")
+    public void testEnterKeyAndShowButtonConvertTheSame()
+    {
+
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        converterPage.converterWindow().sendKeysToInputField("1000.00");
+        double firstResult
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        converterPage.converterWindow().sendKeysToInputField("1050.00");
+        double secondResult
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByPressingEnterKey().getToValue());
+
+        assertNotEquals(firstResult, secondResult);
     }
 }

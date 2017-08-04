@@ -1,30 +1,30 @@
-RUB,    CHF,    100.0
-RUB,    EUR,    100.0
-RUB,    GBP,    100.0
-RUB,    JPY,    100.0
-RUB,    USD,    100.0
-CHF,    RUB,    100.0
-EUR,    RUB,    100.0
-GBP,    RUB,    100.0
-JPY,    RUB,    100.0
-USD,    RUB,    100.0
-CHF,    EUR,    100.0
-CHF,    GBP,    100.0
-CHF,    JPY,    100.0
-CHF,    USD,    100.0
-EUR,    CHF,    100.0
-EUR,    GBP,    100.0
-EUR,    JPY,    100.0
-EUR,    USD,    100.0
-GBP,    CHF,    100.0
-GBP,    EUR,    100.0
-GBP,    JPY,    100.0
-GBP,    USD,    100.0
-JPY,    CHF,    100.0
-JPY,    EUR,    100.0
-JPY,    GBP,    100.0
-JPY,    USD,    100.0
-USD,    CHF,    100.0
-USD,    EUR,    100.0
-USD,    GBP,    100.0
-USD,    JPY,    100.0
+RUB,    CHF
+RUB,    EUR
+RUB,    GBP
+RUB,    JPY
+RUB,    USD
+CHF,    RUB
+EUR,    RUB
+GBP,    RUB
+JPY,    RUB
+USD,    RUB
+CHF,    EUR
+CHF,    GBP
+CHF,    JPY
+CHF,    USD
+EUR,    CHF
+EUR,    GBP
+EUR,    JPY
+EUR,    USD
+GBP,    CHF
+GBP,    EUR
+GBP,    JPY
+GBP,    USD
+JPY,    CHF
+JPY,    EUR
+JPY,    GBP
+JPY,    USD
+USD,    CHF
+USD,    EUR
+USD,    GBP
+USD,    JPY
