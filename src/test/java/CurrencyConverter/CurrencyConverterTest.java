@@ -51,6 +51,7 @@ public class CurrencyConverterTest
     @Before
     public void setUp() {
         converterPage = new ConverterPage(driver);
+        converterPage.converterWindow().clearInputFieldWithBackspace();
     }
 
     @After
@@ -65,7 +66,6 @@ public class CurrencyConverterTest
     @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/input_values.csv")
     public void testInputFieldForDifferentValues(String input, String correctInput)
     {
-        converterPage.converterWindow().clearInputFieldWithBackspace();
         converterPage.converterWindow().sendKeysToInputField(input);
         String resultInputFieldValue = converterPage.converterWindow().getInputFieldValue();
         assertEquals(correctInput, resultInputFieldValue);
@@ -81,7 +81,6 @@ public class CurrencyConverterTest
         double buyRate = 1.0;
         double sellRate = 1.0;
 
-        converterPage.converterWindow().clearInputFieldWithBackspace();
         converterPage.converterWindow().sendKeysToInputField(String.valueOf(valueToConvert));
         converterPage.converterWindow().selectCurrencyFrom(from);
         QuotesWindow quotesWindow = converterPage.converterWindow().selectCurrencyTo(to);
@@ -114,21 +113,11 @@ public class CurrencyConverterTest
     @Description("The minimum value that can be converted should be one")
     public void testMinimumValueThatCanBeConvertedIsOne()
     {
+        double firstResult = getResultAfterConvertion("500,0");
         converterPage.converterWindow().clearInputFieldWithBackspace();
-        converterPage.converterWindow().sendKeysToInputField("500,0");
-
-        double firstResult
-                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
-
+        double secondResult = getResultAfterConvertion("0,99");
         converterPage.converterWindow().clearInputFieldWithBackspace();
-        converterPage.converterWindow().sendKeysToInputField("0,99");
-        double secondResult
-                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
-
-        converterPage.converterWindow().clearInputFieldWithBackspace();
-        converterPage.converterWindow().sendKeysToInputField("1,0");
-        double thirdResult
-                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+        double thirdResult = getResultAfterConvertion("1,0");
 
         assertEquals(firstResult, secondResult, 0.0);
         assertNotEquals(secondResult, thirdResult);
@@ -139,14 +128,9 @@ public class CurrencyConverterTest
     @Description("Convertion should not be executed if the input field is empty")
     public void testEmptyInputValueDoesntConvertAnything()
     {
+        double firstResult = getResultAfterConvertion("1000.00");
         converterPage.converterWindow().clearInputFieldWithBackspace();
-        converterPage.converterWindow().sendKeysToInputField("1000.00");
-        double firstResult
-                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
-
-        converterPage.converterWindow().clearInputFieldWithBackspace();
-        double secondResult
-                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+        double secondResult = getResultAfterConvertion("");
 
         assertEquals(firstResult, secondResult, 0.0);
     }
@@ -157,17 +141,45 @@ public class CurrencyConverterTest
             " \"Convert\" button and pressing \"Enter\" key")
     public void testEnterKeyAndShowButtonConvertTheSame()
     {
-
-        converterPage.converterWindow().clearInputFieldWithBackspace();
-        converterPage.converterWindow().sendKeysToInputField("1000.00");
-        double firstResult
-                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
+        double firstResult = getResultAfterConvertion("1000.00");
 
         converterPage.converterWindow().clearInputFieldWithBackspace();
         converterPage.converterWindow().sendKeysToInputField("1050.00");
         double secondResult
-                = LocalConverter.getDouble(converterPage.converterWindow().convertByPressingEnterKey().getToValue());
+                = LocalConverter.getDouble(converterPage.converterWindow().convertByButtonClick().getToValue());
 
         assertNotEquals(firstResult, secondResult);
+    }
+
+    @Test
+    @Title("Input dot without fractional part")
+    @Description("Test that number which was set in input value with dot but without decimal part" +
+            " is correctly converted")
+    public void userInputWholePartWithDotWithoutFractionalPart()
+    {
+        double firstResult = getResultAfterConvertion("10.00");
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        double secondResult = getResultAfterConvertion("1050.");
+
+        assertNotEquals(firstResult, secondResult);
+    }
+
+    @Test
+    @Title("Input comma without fractional part")
+    @Description("Test that number which was set in input value with comma but without decimal part" +
+            " is correctly converted")
+    public void userInputWholePartWithCommaWithoutFractionalPart()
+    {
+        double firstResult = getResultAfterConvertion("10.00");
+        converterPage.converterWindow().clearInputFieldWithBackspace();
+        double secondResult = getResultAfterConvertion("1034,");
+
+        assertNotEquals(firstResult, secondResult);
+    }
+
+    private double getResultAfterConvertion(String valueToConvert)
+    {
+        converterPage.converterWindow().sendKeysToInputField(valueToConvert);
+        return LocalConverter.getDouble(converterPage.converterWindow().convertByPressingEnterKey().getToValue());
     }
 }
