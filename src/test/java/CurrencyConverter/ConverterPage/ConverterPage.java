@@ -1,7 +1,6 @@
 package CurrencyConverter.ConverterPage;
 
-import CurrencyConverter.ConverterPage.Window.ConverterWindow;
-import CurrencyConverter.ConverterPage.Window.ConvertionResultWindow;
+import CurrencyConverter.ConverterPage.Window.ConverterWindow.ConverterWindow;
 import CurrencyConverter.ConverterPage.Window.QuotesWindow;
 import org.openqa.selenium.WebDriver;
 

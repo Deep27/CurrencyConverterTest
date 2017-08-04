@@ -76,4 +76,12 @@ public class CurrencyConverterTest
         System.out.println(converterPage.quotesWindow().getBuyRate());
         System.out.println(converterPage.quotesWindow().getSellRate());
     }
+
+    @Test
+    @FileParameters(Config.PATH_PARAMETER_RESOURCES + "Converter/currency_combinations.csv")
+    public void DEBUGSelectCurrencies(String currencyFrom, String currencyTo, String value)
+    {
+        converterPage.converterWindow().selectCurrencyFrom(currencyFrom);
+        converterPage.converterWindow().selectCurrencyTo(currencyTo);
+    }
 }

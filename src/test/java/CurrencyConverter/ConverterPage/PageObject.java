@@ -22,7 +22,7 @@ public abstract class PageObject
     }
 
     protected WebElement getVisibleElement(By locator) {
-        return new WebDriverWait(driver, 10). until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public void waitForPageToLoad() {
